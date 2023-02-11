@@ -1,0 +1,330 @@
+@font-face {  
+    font-family: "OpenSans"; 
+    src: url("/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
+
+@font-face {  
+    font-family: "Oswald-Regular"; 
+    src: url("/fonts/Oswald/Oswald-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;  
+} 
+@font-face {  
+    font-family: "Oswald-Bold"; 
+    src: url("/fonts/Oswald/Oswald-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: bold;  
+} 
+
+body {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"OpenSans";
+    background: rgb(51,51,51);
+    height:10000px;
+}
+
+.el_header {
+    display:flex;
+    align-items:center;
+    height:100px;
+    justify-content:center;
+    margin-bottom:80px;
+}
+
+.el_header_button {
+    background:transparent;
+    border:2px solid #fff;
+    border-radius:50px;
+    padding:10px 20px;
+    color:#fff;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.enter_button {
+    margin:20px;
+}
+
+.el_header_button:hover {
+    background:#fff;
+    color:#000;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.el_header_input {
+    width:51%;
+    padding:10px;
+    font-size:30x;
+    background-color: rgb(83, 83, 83);
+    border:2px solid rgb(206, 206, 206);
+    font-weight:bold;
+    color:#fff;
+    outline:none;
+    border-radius:50px;
+    transition:0.3s;
+    margin:0 auto;
+}
+
+.el_header_input:focus {
+    transition: 0.3s;
+    background-color: #fff;
+    color:rgb(83, 83, 83);;
+}
+
+.el_logo {
+    margin:20px;
+    margin-right:auto;
+    width:120px;
+    height:80px;
+    background-image: url("images/logo.png");
+    background-repeat:no-repeat;
+    background-size: 120px 80px;
+    position:sticky;
+    top:0;
+}
+
+.el_shopping_cart {
+    width:40px;
+    height:40px;
+    background: url("icons/shopping_cart.png");
+    background-repeat: no-repeat;
+    background-size:40px 40px;
+    margin:40px;
+} 
+
+main {
+    width:70%;
+    display:flex;
+    align-items:center;
+    margin:0 auto;
+    flex-direction:column;
+}
+
+  .slideshow-container {
+    width:100%;
+    position: relative;
+    margin: auto;
+    border:3px solid rgb(203,203,203);
+    border-radius:50px;
+    overflow:hidden;
+    height:700px;
+  }
+
+  .mySlides {
+    height:100%;
+    display: none;
+    transition: 1s;
+    position:relative;  
+    cursor:pointer;
+    /* background-image: url('images/rdr2.jpg');
+    background-size:100% 100%; */
+  }
+  .mySlides:nth-child(1) {
+    background-image: url('images/rdr2.jpg');
+    background-size:100% 100%;
+  }
+  .mySlides:hover {
+       transform:scale(1.2);
+       opacity:0.6;
+  }
+  .mySlides:hover .appear{
+    display:block;
+    opacity:1;
+  }
+  
+
+  .prev, .next {
+    z-index:2;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 10px 10px 0;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(51,51,51);
+  }
+
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
+  }
+
+
+  .appear {
+    font-family:"Oswald-Bold";
+    margin:200px;
+    display:none;
+    position:absolute;
+    z-index:10; 
+  }
+
+  .el_h1_appear {
+    color:#fff;
+    user-select:none;
+  }
+  .el_button_appear {
+    background:#fff;;
+    border:2px solid #fff;
+    border-radius:50px;
+    padding:10px 20px;
+    color:#000;
+    font-weight:bold;
+    transition:0.3s;
+    cursor:pointer;
+  }
+  .el_button_appear:hover {
+    background-color: #000;
+    color:#fff;
+  }
+  .price {
+    display:flex;
+    justify-content: space-around;
+    align-items:flex-end;
+    height:100%;
+  }
+  .price_number {
+    color:#fff;
+  }
+  .discount_amount {
+    color:rgb(51,51,51);
+    background-color:white;
+    padding:10px 5px;
+    border-radius:5px;
+  }
+  .shopping_list {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin-top:5%;
+
+  }
+  .shop_item {
+    border:1px solid #fff;
+    width:20%;
+    height:420px;
+    border-radius:20px;
+    margin-left:4%;
+    margin-bottom:3%;
+    cursor:pointer;
+    
+  }
+  .shop_item img {
+    width:100%;
+    height:300px;
+    border-radius:20px 20px 0px 0;
+    
+  }
+  .shop_item_description {
+    padding:10px;
+    color:#fff;
+margin-top:-20px;
+  }
+  .price_flex {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+  }
+  .add_to_cart {
+    background:#fff;;
+    border:2px solid #fff;
+    border-radius:50px;
+    padding:5px 15px;
+    color:#000;
+    font-weight:bold;
+    transition:0.3s;
+    cursor:pointer;
+    font-size:14px;
+    height:50px;
+  }
+  .add_to_cart:hover {
+    background-color: #000;
+    color:#fff;
+  }
+ .shop_item a {
+  text-decoration: none;
+  color:#fff;
+ }
+ .items_for_sale_heading {
+  color:#fff;
+  font-size:36px;
+  text-align:center;
+  margin-top:50px;
+
+ }
+ .switch_page_ul {
+  display:flex;
+  list-style: none;
+ }
+ .switch_page_li {
+  margin-left:20px;
+  color:#fff;
+ }
+ .switch_page_li:active {
+  background-color:#fff;
+  color:rgb(51,51,51);
+  padding:5px 10px;
+ }
+ .switch_page_ul a {
+  text-decoration: none;
+ }
+
+
+
+ 
+ input[type=radio] {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: -1;
+}
+
+label {
+  cursor: pointer;
+  user-select: none;
+}
+
+label {
+  color: white;
+  display: inline-block;
+  background: black;
+  margin: 0 0 .5em 0;
+  padding: 1em 2em;
+}
+
+input[type=radio]:checked~label {
+  background-color: red;
+}
