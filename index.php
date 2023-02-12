@@ -24,10 +24,9 @@
 <main>
 <div class="slideshow-container">
 
-
     <div class="mySlides fade">
         <div class="appear">
-            <h1 class="el_h1_appear">НАШИ ЛУЧШИЕ ПРЕДЛОЖЕНИЯ</h1>
+            <h1 class="el_h1_appear">ПОГРУЗИТЕСЬ В АТМОСФЕРУ США КОНЦА 19 ВЕКА В ИГРЕ, ГДЕ ДАЖЕ САМАЯ НЕЗНАЧИТЕЛЬНАЯ ДЕТАЛЬ ПРОРАБОТАНА ДО МЕЛОЧЕЙ. НОВЫЙ ШЕДЕВР ОТ ROCKSTAR</h1>
             <a href="#"><button class="el_button_appear">В КОРЗИНУ</button></a>
         </div>
         <div class="price">
@@ -41,19 +40,26 @@
 
     <div class="mySlides fade">
     <div class="appear">
-            <h1 class="el_h1_appear">НАШЕ ЛУЧШЕЕ ПРЕДЛОЖЕНИЕ</h1>
-            <a href="#"><button class="el_button_appear">КУПИТЬ</button></a>
+            <h1 class="el_h1_appear">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui amet eaque odio fuga quos. Recusandae nesciunt earum reiciendis iusto! Est dolore iusto consequuntur, esse minima possimus aspernatur dolor suscipit? Nisi.</h1>
+            <a href="#"><button class="el_button_appear">В КОРЗИНУ</button></a>
         </div>
-        <img class="el_image_blured" src="images/cyberpunk.jpg" style="width:100%">
         
+        <div class="price">
+            <h3 class="price_number">899₽</h3>
+            <h3 class="discount_amount">50%</h3>
+        </div>
     </div>
 
     <div class="mySlides fade">
     <div class="appear">
-            <h1 class="el_h1_appear">НАШЕ ЛУЧШЕЕ ПРЕДЛОЖЕНИЕ</h1>
-            <a href="#"><button class="el_button_appear">КУПИТЬ</button></a>
+            <h1 class="el_h1_appear">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit perspiciatis praesentium facilis reprehenderit quas non nobis eaque, quibusdam itaque qui amet labore soluta ad cumque error deserunt ipsa quis corporis.</h1>
+            <a href="#"><button class="el_button_appear">В КОРЗИНУ</button></a>
         </div>
-        <img class="el_image_blured" src="images/the_witcher3.jpg" style="width:100%">
+        
+        <div class="price">
+            <h3 class="price_number">899₽</h3>
+            <h3 class="discount_amount">50%</h3>
+        </div>
         >
     </div>
 
@@ -67,7 +73,7 @@
     <h1 class="items_for_sale_heading">ВСЕ ИГРЫ</h1>
     <div class="shopping_list">
     <div class="shop_item">
-        <img src="images/rdr2.jpg" alt="">
+        <img src="images/vertical_images/rdr2_vertical.jpg" alt="">
         <div class="shop_item_description">
             <a href="#"><h3 class="shop_item_name">Red Dead Redemption 2</h3></a>
             <div class="price_flex">
@@ -245,11 +251,6 @@
         <a href="#"><li class="switch_page_li">5</li></a>
     </ul>
 
-    <input class="checked_input" type="radio" id="button">
-<label class="checked_input_label" for="button">Click</label>
-
-<input class="checked_input" type="radio" id="button">
-<label class="checked_input_label" for="button">Click</label>
 
 </div>
 </container>

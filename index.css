@@ -128,18 +128,26 @@ main {
     background-image: url('images/rdr2.jpg');
     background-size:100% 100%;
   }
-  .mySlides:hover {
-       transform:scale(1.2);
-       opacity:0.6;
+
+  .mySlides:nth-child(2) {
+    background-image: url('images/cyberpunk.jpg');
+    background-size:100% 100%;
   }
+
+  .mySlides:nth-child(3) {
+    background-image: url('images/the_witcher3.jpg');
+    background-size:100% 100%;
+  }
+  
   .mySlides:hover .appear{
     display:block;
-    opacity:1;
+    transition:2s;
   }
+  
   
 
   .prev, .next {
-    z-index:2;
+    z-index:11;
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -186,10 +194,16 @@ main {
 
   .appear {
     font-family:"Oswald-Bold";
-    margin:200px;
     display:none;
     position:absolute;
     z-index:10; 
+    background-color: rgb(0,0,0,0.5);
+    box-shadow: 0 0 50px 60px rgb(0,0,0,0.5);
+    padding:10px 30px;
+    width:400px;
+    top:0;right:0;
+    font-size:12px;
+    text-transform: uppercase;
   }
 
   .el_h1_appear {
@@ -200,11 +214,12 @@ main {
     background:#fff;;
     border:2px solid #fff;
     border-radius:50px;
-    padding:10px 20px;
+    padding:20px 40px;
     color:#000;
     font-weight:bold;
     transition:0.3s;
     cursor:pointer;
+    font-size: 16px;
   }
   .el_button_appear:hover {
     background-color: #000;
@@ -216,14 +231,18 @@ main {
     align-items:flex-end;
     height:100%;
   }
+  .price_number, .discount_amount {
+    padding:10px 5px;
+    border-radius:5px;
+  }
   .price_number {
     color:#fff;
+    background-color: rgb(51,51,51);
   }
   .discount_amount {
     color:rgb(51,51,51);
     background-color:white;
-    padding:10px 5px;
-    border-radius:5px;
+    
   }
   .shopping_list {
     display:flex;
@@ -240,7 +259,7 @@ main {
     margin-left:4%;
     margin-bottom:3%;
     cursor:pointer;
-    
+    transition:0.5s;
   }
   .shop_item img {
     width:100%;
@@ -251,7 +270,7 @@ main {
   .shop_item_description {
     padding:10px;
     color:#fff;
-margin-top:-20px;
+margin-top:-25px;
   }
   .price_flex {
     display:flex;
@@ -278,6 +297,9 @@ margin-top:-20px;
   text-decoration: none;
   color:#fff;
  }
+ .shop_item:hover {
+  transform: scale(1.1);
+ }
  .items_for_sale_heading {
   color:#fff;
   font-size:36px;
@@ -292,39 +314,17 @@ margin-top:-20px;
  .switch_page_li {
   margin-left:20px;
   color:#fff;
+  transition:0.5s;
+  font-size: 22px;
  }
- .switch_page_li:active {
+ .switch_page_li:hover {
   background-color:#fff;
   color:rgb(51,51,51);
-  padding:5px 10px;
+  padding:8px 16px;
+  border-radius:5px;  
+  
  }
  .switch_page_ul a {
   text-decoration: none;
  }
 
-
-
- 
- input[type=radio] {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  z-index: -1;
-}
-
-label {
-  cursor: pointer;
-  user-select: none;
-}
-
-label {
-  color: white;
-  display: inline-block;
-  background: black;
-  margin: 0 0 .5em 0;
-  padding: 1em 2em;
-}
-
-input[type=radio]:checked~label {
-  background-color: red;
-}
