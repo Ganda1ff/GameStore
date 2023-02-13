@@ -15,7 +15,7 @@
                 <button class="el_header_button">КАТАЛОГ ИГР</button>
             </a>
             <input class="el_header_input" type="text" placeholder="Введите название игры">
-            <a href="" class="el_a">
+            <a href="login_files/login_form.php" class="el_a">
                 <button class="el_header_button">ВОЙТИ</button>
             </a>
             <a class="el_shopping_cart" href="#"></a>
@@ -257,7 +257,7 @@
 
 
 </main>
-<script src="slide_gallery.js"></script>
+<script src="src/js/slide_gallery.js"></script>
 
 </body>
 </html>
