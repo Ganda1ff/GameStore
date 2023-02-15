@@ -27,7 +27,6 @@ if ($_SESSION['user']) {
             <a href="#" class="el_a">
                 <button class="el_header_button enter_button">ВОЙТИ</button>
             </a>
-            <a href="login_files/registration_form.php"><button>enter</button></a>
             <a class="el_shopping_cart" href="#"></a>
           
 <!-- registration -->
@@ -35,12 +34,21 @@ if ($_SESSION['user']) {
 <div class="login"></div>
 <div class="reg_form">
     <div class="reg_flex">
-            <form action="login_files/registration.php" method="POST"  enctype="multipart/form-data">
+            <form action="vendor/registration.php" method="POST"  enctype="multipart/form-data">
                 <input type="text" placeholder="имя" name="name">
-                <input type="text" placeholder="эл.почта или телефон" name="login">
-            <input type="password"  id="password-input"  placeholder="пароль" name="pass">
+                <input type="file" name="avatar">
+                <input type="text" placeholder="Логин" name="login">
+                <input type="email" name="email" placeholder="Введите адрес своей почты">
+            <input type="password"  id="password-input"  placeholder="Пароль" name="pass">
+            <input type="password" name="verifyPass" placeholder="Подтвердите пароль">
         <button type="submit">Зарегистрироваться</button>
         <a href="#" class="reg_a">У меня уже есть аккаунт</a>
+        <?php
+            if ($_SESSION['message']) {
+                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+            }
+            unset($_SESSION['message']);
+        ?>
 </form>
     </div>
 </div>
@@ -48,7 +56,7 @@ if ($_SESSION['user']) {
 
 <div class="login_form">
     <div class="login_flex">
-        <form action="login_files/login.php" method="POST">
+        <form action="vendor/login.php" method="POST">
         <input type="text" placeholder="эл.почта или телефон" name="login">
         <input type="password" placeholder="пароль" name="pass">
         <button type="submit" class="el_header_button">Войти</button>

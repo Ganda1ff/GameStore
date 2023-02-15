@@ -2,7 +2,6 @@
 
     session_start();
     require_once 'config.php';
-
     $login = $_POST['login'];
     $pass = md5($_POST['pass']);
 
@@ -13,7 +12,7 @@
 
         $_SESSION['user'] = [
             "id" => $user['id'],
-            "full_name" => $user['full_name'],
+            "name" => $user['name'],
             "avatar" => $user['avatar'],
             "email" => $user['email']
         ];
@@ -22,7 +21,7 @@
 
     } else {
         $_SESSION['message'] = 'Не верный логин или пароль';
-        header('Location: /index.php');
+        header('Location: ../index.php');
     }
     ?>
 
