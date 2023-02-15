@@ -1,9 +1,18 @@
+<?php
+session_start();
+
+if ($_SESSION['user']) {
+    header('Location: profile.php');
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Document</title>
@@ -15,11 +24,48 @@
                 <button class="el_header_button">КАТАЛОГ ИГР</button>
             </a>
             <input class="el_header_input" type="text" placeholder="Введите название игры">
-            <a href="login_files/login_form.php" class="el_a">
-                <button class="el_header_button">ВОЙТИ</button>
+            <a href="#" class="el_a">
+                <button class="el_header_button enter_button">ВОЙТИ</button>
             </a>
+            <a href="login_files/registration_form.php"><button>enter</button></a>
             <a class="el_shopping_cart" href="#"></a>
           
+<!-- registration -->
+
+<div class="login"></div>
+<div class="reg_form">
+    <div class="reg_flex">
+            <form action="login_files/registration.php" method="POST"  enctype="multipart/form-data">
+                <input type="text" placeholder="имя" name="name">
+                <input type="text" placeholder="эл.почта или телефон" name="login">
+            <input type="password"  id="password-input"  placeholder="пароль" name="pass">
+        <button type="submit">Зарегистрироваться</button>
+        <a href="#" class="reg_a">У меня уже есть аккаунт</a>
+</form>
+    </div>
+</div>
+<!-- authorization -->
+
+<div class="login_form">
+    <div class="login_flex">
+        <form action="login_files/login.php" method="POST">
+        <input type="text" placeholder="эл.почта или телефон" name="login">
+        <input type="password" placeholder="пароль" name="pass">
+        <button type="submit" class="el_header_button">Войти</button>
+
+        <?php
+            if ($_SESSION['message']) {
+                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+            }
+            unset($_SESSION['message']);
+        ?>
+
+    </form>
+    <a href="#" class="a_login">Если у вас нет аккаунта</a>
+    </div>
+</div>
+
+
 </header>
 <main>
 <div class="slideshow-container">
@@ -258,6 +304,8 @@
 
 </main>
 <script src="src/js/slide_gallery.js"></script>
+<script src="src/js/switch_page.js"></script>
+<script src="src/js/login.js"></script>
 
 </body>
 </html>

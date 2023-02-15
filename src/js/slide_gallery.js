@@ -42,8 +42,4 @@ function showSlides(n) {
 //         });
 //       }
 
-let el_btn = document.querySelector(".switch_page_li");
-el_btn.addEventListener("click", function() {
-  this.classList.add("active");
-});
 

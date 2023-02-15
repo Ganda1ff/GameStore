@@ -1,35 +1,34 @@
 <?php
+
     session_start();
-    if (isset($_POST['login']) && isset($_POST['pass'])) {
-        include "$_SERVER[DOCUMENT_ROOT]/config.php";
+    require_once 'config.php';
 
-        $db_host = "localhost";
-        $db_user = "root";
-        $db_password = "root";
-        $db_base = "bd";
-        $db_table = "users"; 
+    $login = $_POST['login'];
+    $pass = md5($_POST['pass']);
 
-        $login = $_POST['login'];
-        $password = $_POST['pass'];
-        
-        $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB);
-        $authQuery = "SELECT * FROM `users` WHERE `login` = '$login'";
-        if (!$result = $mysqli->query($authQuery)) {
-            die('Ошибка запроса: '. $mysqli->error);
-        }
-        if (!$result->num_rows) {
-            echo('<font color="red">Неверный логин или пароль!</font>');
-        } else {
-            $user = $result->fetch_assoc();
-            if ($user['pass'] !== hash('md5', $pass)) {
-                echo('<font color="red">Неверный логин или пароль!</font>');
-            } else {
-                $_SESSION['users'] = $user;
-            }
-        }
+    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'");
+    if (mysqli_num_rows($check_user) > 0) {
+
+        $user = mysqli_fetch_assoc($check_user);
+
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "full_name" => $user['full_name'],
+            "avatar" => $user['avatar'],
+            "email" => $user['email']
+        ];
+
+        header('Location: ../profile.php');
+
+    } else {
+        $_SESSION['message'] = 'Не верный логин или пароль';
+        header('Location: /index.php');
     }
-    if (isset($_SESSION['users'])) {
-        echo("<h1> " . $_SESSION['users']['name'] . "</h1>");?>
-    <h1>YAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
-        <?php
-    }?>
+    ?>
+
+<pre>
+    <?php
+    print_r($check_user);
+    print_r($user);
+    ?>
+</pre>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,4 +14,4 @@
     </form>
     <a href="registration_form.php">Если у вас нет аккаунта</a>
 </body>
-</html>
+</html> -->

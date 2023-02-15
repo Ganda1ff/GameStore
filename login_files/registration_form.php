@@ -13,8 +13,8 @@
         <input type="text" placeholder="эл.почта или телефон" name="login">
         <div class="password">
             <input type="password"  id="password-input"  placeholder="пароль" name="pass">
-            <!-- <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> -->
-        </div>
+            
+         </div>
         <button type="submit">Зарегистрироваться</button>
     </form>
     <script></script>

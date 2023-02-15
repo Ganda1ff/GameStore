@@ -8,6 +8,7 @@ $registrationSuccess = true;
 $name= $_POST['name'];
 $login = $_POST['login'];
 $pass = $_POST['pass'];
+$verificationPass = $_POST['verificationPass'];
 
 $db_host = "localhost";
 $db_user = "root";
@@ -20,26 +21,17 @@ $mysqli = new mysqli($db_host,$db_user,$db_password,$db_base);
         
         if ($mysqli->connect_error) {
             die('Ошибка : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-        }
+        }              
         
         $loginQuery = "SELECT * FROM `users` WHERE `login` = '$login'";
         if (!$loginSelect = $mysqli->query($loginQuery)) {
             $registrationSuccess = false;
             die('Ошибка запроса: '. $mysqli->error);
-        } else {
-            if ($loginSelect->num_rows) {
-                $registrationSuccess = false;
-                ?> 
-                <h1>Введенный логин уже существует!</h1>
-                
-                <?php
-                exit;
-                
-                
-            }
         }
 
-        $result = $mysqli->query("INSERT INTO ".$db_table." (login, pass, name) VALUES ('$login', '$pass', '$name')");
+        $hash = md5($pass);
+        $result = $mysqli->query("INSERT INTO ".$db_table." (login, pass, name) VALUES ('$login', '$hash', '$name')");
+        
         
         if ($result == true){
             
