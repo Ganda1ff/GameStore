@@ -1,8 +1,16 @@
-let pagination = document.querySelectorAll('.switch_page_li');
+const links = document.querySelectorAll('.link');
+let activeLink = localStorage.getItem('activeLink');
 
-for(i = 0; i < pagination.length; i++) {
-        pagination[i].style.color = "white";
-        pagination[i].addEventListener('click', (e)=>{
-            pagination[i].style.color = "red";
-        });
-}
+links.forEach(link => {
+  if (link.getAttribute('id') === activeLink) {
+    link.classList.add('activated');
+  }
+
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    links.forEach(l => l.classList.remove('activated'));
+
+    link.classList.add('activated');
+    localStorage.setItem('activeLink', link.getAttribute('id'));
+  });
+});

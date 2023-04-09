@@ -267,17 +267,15 @@ if ($_SESSION['user']) {
 
 </div>
 <div class="switch_page">
-    <ul class="switch_page_ul">
-        
-        <a href="#"><li class="switch_page_li">1</li></a>
-        <a href="#"><li class="switch_page_li">2</li></a>
-        <a href="#"><li class="switch_page_li">3</li></a>
-        <a href="#"><li class="switch_page_li">4</li></a>
-        <a href="#"><li class="switch_page_li">5</li></a>
-    </ul>
-
+          
+<li class="list_style"><a href="#" id="link1" class="link">Link 1</a></li>
+  <li class="list_style"><a href="#" id="link2" class="link">Link 2</a></li>
+  <li class="list_style"><a href="#" id="link3" class="link">Link 3</a></li>
+  <li class="list_style"><a href="#" id="link4" class="link">Link 4</a></li>
+  <li class="list_style"><a href="#" id="link5" class="link">Link 5</a></li>
 
 </div>
+
 </container>
 
 <h1 class="comments_header">ОТЗЫВЫ НАШИХ КЛИЕНТОВ</h1>
