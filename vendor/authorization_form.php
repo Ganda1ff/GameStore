@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация/Вход</title>
     <link rel="stylesheet" href="../src/css/authorization_style.css">
+    <link type="image/png" sizes="16x16" rel="icon" href="images/favicon.png">
+
 </head>
 <body>
     <div class="reg">

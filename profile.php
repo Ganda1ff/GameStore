@@ -11,6 +11,8 @@ if (!$_SESSION['user']) {
     <meta charset="UTF-8">
     <title>Ваш профиль</title>
     <link rel="stylesheet" href="src/css/profile.css"> 
+    <link type="image/png" sizes="16x16" rel="icon" href="images/favicon.png">
+
 </head>
 <body>
     <div class="form_wrap">
@@ -22,7 +24,9 @@ if (!$_SESSION['user']) {
         <br>
         <h2 class="user_login user_info">ВАШ ЛОГИН: <?= $_SESSION['user']['login'] ?></h2>
         <br>
-        <a href="#" class="user_info">ВАШ EMAIL<?= $_SESSION['user']['email'] ?></a>
+        <a href="#" class="user_email user_info "><strong>ВАШ EMAIL: </strong><?= $_SESSION['user']['email'] ?></a>
+        <br>
+        <p class="contact">Если у вас возникли какие-либо вопросы, вы можете связаться с нами по этому адресу: <strong><a href="mailto:officialgamestore7@gmail.com">officialgamestore7@gmail.com</a></strong></p>
         <br>
         <a href="vendor/logout.php" class="logout  user_info buttons">ВЫХОД</a>
         <br>

@@ -14,7 +14,8 @@ if ($_SESSION['user']) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link type="image/png" sizes="16x16" rel="icon" href="images/favicon.png">
+
     <title>Главная</title>
 </head>
 <body>
@@ -268,11 +269,11 @@ if ($_SESSION['user']) {
 </div>
 <div class="switch_page">
           
-<li class="list_style"><a href="#" id="link1" class="link">Link 1</a></li>
-  <li class="list_style"><a href="#" id="link2" class="link">Link 2</a></li>
-  <li class="list_style"><a href="#" id="link3" class="link">Link 3</a></li>
-  <li class="list_style"><a href="#" id="link4" class="link">Link 4</a></li>
-  <li class="list_style"><a href="#" id="link5" class="link">Link 5</a></li>
+<li class="list_style"><a href="#" id="link1" class="link">1</a></li>
+  <li class="list_style"><a href="#" id="link2" class="link">2</a></li>
+  <li class="list_style"><a href="#" id="link3" class="link">3</a></li>
+  <li class="list_style"><a href="#" id="link4" class="link">4</a></li>
+  <li class="list_style"><a href="#" id="link5" class="link">5</a></li>
 
 </div>
 

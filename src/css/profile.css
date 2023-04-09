@@ -52,19 +52,24 @@ a {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 .buttons {
-    text-decoration: none;
-  color:#fff;
+    /* text-decoration: none;
+  
   font-size: 16px;
   border-radius: 50px;
-  border:2px solid #fff;
-  padding:12px 20px;
+  
+ 
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
+  
+  transition: 0.3s;*/
+  color:#fff; 
+  border:2px solid #fff;
   background-color: #000; 
-  transition: 0.3s;
+  margin-top: 200px; 
   
 }
 .buttons:hover {
@@ -72,3 +77,6 @@ a {
     color: #000;
    transition:0.3s;
   }
+ .contact {
+    margin-top: 20px;
+ }
