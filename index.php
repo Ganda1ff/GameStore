@@ -15,7 +15,7 @@ if ($_SESSION['user']) {
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Document</title>
+    <title>Главная</title>
 </head>
 <body>
 <header class="el_header">
@@ -27,7 +27,7 @@ if ($_SESSION['user']) {
             <a href="vendor/authorization_form.php" class="el_a">
                 <button class="el_header_button enter_button">ВОЙТИ</button>
             </a>
-            <a href="profile.php" style="margin: 10px 0;"><?= $_SESSION['user']['name'] ?></a>
+            <a class="profile_href" href="profile.php" style="margin: 10px 0;"><?= $_SESSION['user']['name'] ?></a>
 
             <?php 
                 if (!empty($_SESSION['user'])) {
@@ -92,6 +92,8 @@ if ($_SESSION['user']) {
 <container class="items_for_sale">
     <h1 class="items_for_sale_heading">ВСЕ ИГРЫ</h1>
     <div class="shopping_list">
+
+        
     <div class="shop_item">
         <img src="images/vertical_images/rdr2_vertical.jpg" alt="">
         <div class="shop_item_description">
@@ -99,12 +101,15 @@ if ($_SESSION['user']) {
             <div class="price_flex">
 
                 <h3 class="shop_item_price">899₽</h3>
-        
-                <button class="add_to_cart">В КОРЗИНУ</button>
+
+        <form action="cart.php" method="POST">
+
+                <button class="add_to_cart" name="add_to_cart">В КОРЗИНУ</button>
 
             </div>
         </div>
     </div>
+    </form>
 
     <div class="shop_item">
         <img src="images/rdr2.jpg" alt="">
@@ -275,6 +280,66 @@ if ($_SESSION['user']) {
 </div>
 </container>
 
+<h1 class="comments_header">ОТЗЫВЫ НАШИХ КЛИЕНТОВ</h1>
+<?php
+if (!empty($_SESSION['user'])) { ?>
+
+<div class="comment_bar">
+<form method="POST" action="">
+    <div class="comment_left">
+
+    <label for="comment"></label>
+    <textarea id="comment_textarea" placeholder="НАПИШИТЕ СЮДА СВОИ ВПЕЧАТЛЕНИЯ ОТ НАШЕГО МАГАЗИНА" name="comment" id="comment" required></textarea>
+
+    <input class="comment_button" type="submit" name="submit" value="ОПУБЛИКОВАТЬ ОТЗЫВ">
+</div>
+
+</form>
+<?php
+}
+?>
+<div class="comment_right">
+<?php
+
+session_start();
+
+$db = new mysqli('localhost', 'root', 'root', 'bd');
+
+if (isset($_POST['submit'])) {
+    $name = $_SESSION['user']['name'];
+    $comment = $_POST['comment'];
+
+    // Check if user already submitted a comment
+    $query = "SELECT * FROM comments WHERE name='$name'";
+    $result = $db->query($query);
+    if ($result->num_rows > 0) {
+        echo "<strong class='comment_strong_red_alert' color='red'>ВЫ УЖЕ ОСТАВИЛИ ОТЗЫВ</strong>";
+    } else {
+        // Insert new comment into database
+        $query = "INSERT INTO comments (name, comment) VALUES ('$name', '$comment')";
+        $db->query($query);
+    }
+}
+
+// Select all comments from database and display them
+$query = "SELECT * FROM comments";
+$result = $db->query($query);
+
+while ($row = $result->fetch_assoc()) {
+    $name = $row['name'];
+    $comment = $row['comment'];
+    $date = $row['date'];
+
+    echo "<div class='comment'>";
+    echo "<strong>$name:</strong> $comment";
+    echo "<br><small>$date</small>";
+    echo "<hr>";
+    echo "</div>";
+}
+
+?>
+</div>
+</div>
 
 </main>
 

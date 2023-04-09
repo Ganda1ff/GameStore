@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {  
+    font-family: "OpenSans"; 
+    src: url("../../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
+
+@font-face {  
+    font-family: "Oswald-Regular"; 
+    src: url("../../fonts/Oswald/Oswald-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;  
+} 
+@font-face {  
+    font-family: "Oswald-Bold"; 
+    src: url("../../fonts/Oswald/Oswald-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: bold;  
+} 
+
+body {
+    background-color: rgb(51,51,51);
+    color:#fff;
+    font-family: "OpenSans";
+}
+.img_wrap {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border:5px solid rgb(203,203,203);
+}
+a {
+    text-decoration: none;
+    color:#fff;
+}
+
+.user_image {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  border-radius: 50%;
+}
+.form_wrap {
+    margin-left: 50px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.buttons {
+    text-decoration: none;
+  color:#fff;
+  font-size: 16px;
+  border-radius: 50px;
+  border:2px solid #fff;
+  padding:12px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #000; 
+  transition: 0.3s;
+  
+}
+.buttons:hover {
+    background-color: #fff;
+    color: #000;
+   transition:0.3s;
+  }
