@@ -11,14 +11,12 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['pass'];
     $avatar = $_FILES['avatar'];
 
-    // Check if name is not empty
     if (empty(trim($name))) {
         $_SESSION['message'] = 'Имя не может быть пустым';
         header('Location: settings.php');
         exit();
     }
 
-    // Check if password is not empty and meets the requirements
     if (!empty(trim($pass))) {
         if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*()_+]).{8,}$/', $pass)) {
             $_SESSION['message'] = 'Пароль должен содержать не менее 8 символов, включая заглавные и строчные буквы, цифры и специальные символы';
@@ -31,7 +29,6 @@ if (isset($_POST['submit'])) {
         $_SESSION['user']['pass'] = $pass;
     }
 
-    // Check if avatar was uploaded
     if (!empty($avatar['name'])) {
         $path = 'uploads/' . time() . $avatar['name'];
         if (!move_uploaded_file($avatar['tmp_name'], '../' . $path)) {

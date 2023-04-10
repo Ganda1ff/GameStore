@@ -18,8 +18,13 @@ if (!$_SESSION['user']) {
     <div class="form_wrap">
     <form>
         <div class="img_wrap">
-        <img class="user_image" src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
-    </div>
+        <?php 
+        if (isset($_SESSION['user']['avatar'])) {
+            echo '<img class="user_image" src="' . $_SESSION['user']['avatar'] . '" width="200" alt="">';
+        } else {
+            echo '<img class="user_image" src="uploads/avatar_not_selected.png" width="200" alt="">';
+        }
+        ?>
         <h2 class="user_name user_info">ВАШЕ ИМЯ: <?= $_SESSION['user']['name'] ?></h2>
         <br>
         <h2 class="user_login user_info">ВАШ ЛОГИН: <?= $_SESSION['user']['login'] ?></h2>
