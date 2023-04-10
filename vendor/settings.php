@@ -10,12 +10,28 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $pass = $_POST['pass'];
     $avatar = $_FILES['avatar'];
+    $login = $_POST['login'];
 
     if (empty(trim($name))) {
         $_SESSION['message'] = 'Имя не может быть пустым';
         header('Location: settings.php');
         exit();
     }
+
+
+
+
+
+    $check_login_query = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login'");
+    if (mysqli_num_rows($check_login_query) > 0) {
+        $_SESSION['message'] = 'Пользователь с таким логином уже существует!';
+        header('Location: ../profile.php');
+        exit;
+    }
+
+
+
+
 
     if (!empty(trim($pass))) {
         if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*()_+]).{8,}$/', $pass)) {
@@ -39,6 +55,8 @@ if (isset($_POST['submit'])) {
         mysqli_query($connect, "UPDATE `users` SET `avatar` = '$path' WHERE `id` = '{$_SESSION['user']['id']}'");
         $_SESSION['user']['avatar'] = $path;
     }
+    mysqli_query($connect, "UPDATE `users` SET `login` = '$login' WHERE `id` = '{$_SESSION['user']['id']}'");
+    $_SESSION['user']['login'] = $login;
 
     mysqli_query($connect, "UPDATE `users` SET `name` = '$name' WHERE `id` = '{$_SESSION['user']['id']}'");
     $_SESSION['user']['name'] = $name;
@@ -48,26 +66,3 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Настройки профиля</title>
-    <link rel="stylesheet" href="src/css/profile.css"> 
-    <link type="image/png" sizes="16x16" rel="icon" href="images/favicon.png">
-
-</head>
-<body>
-    <div class="form_wrap">
-    <form method="POST" enctype="multipart/form-data">
-        <div class="img_wrap">
-            <img class="user_image" src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
-            <input type="file" name="avatar">
-        </div>
-        <label for="name">Имя:</label>
-        <input type="text" name="name" value="<?= $_SESSION['user']['name'] ?>">
-        <label for="pass">Новый пароль:</label>
-        <input type="password" name="pass">
-        <input type="submit" name="submit" value="Сохранить">
-        <a href="../profile.php" class="buttons">Отмена

@@ -361,6 +361,8 @@ margin-top:-25px;
   align-items: center;
   justify-content: space-between;
   margin-top: 50px;
+  margin-bottom: 50px;
+  
 }
 #comment_textarea {
   border-radius: 50px;

@@ -208,5 +208,30 @@ h1 {
   }
   .reg_form input:focus {
     background-color: #fff;
-    color:rgb(83, 83, 83);;
+    color:rgb(83, 83, 83);
   }
+
+  @media screen and (min-width:420px) and (max-width:599px) {
+    .login_form {
+      width: 300px;
+    }
+    
+    .reg_form {
+      width: 300px;
+    }
+  }
+  @media screen and (min-width:320px) and (max-width:419px) {
+    .login_form {
+      width: 250px;
+    }
+  
+  .a_login {
+    font-size: 14px;
+  }
+  .reg_form {
+    width: 250px;
+  }
+  .reg_a {
+    font-size: 14px;
+  }
+}
