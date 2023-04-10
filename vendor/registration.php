@@ -27,6 +27,12 @@
             header('Location: ../index.php');
             exit();
         }
+
+        $path = 'uploads/' . time() . $_FILES['avatar']['name'];
+        if (!move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $path)) {
+            $_SESSION['message'] = 'Ошибка при загрузке сообщения';
+            header('Location: ../index.php');
+        }
         
         $pass = md5($pass);
 

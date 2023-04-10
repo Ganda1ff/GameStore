@@ -22,7 +22,7 @@ if ($_SESSION['user']) {
 <header class="el_header">
     <div class="el_logo"><a href=""></a></div>
             <a href="" class="el_a">
-                <button class="el_header_button">КАТАЛОГ ИГР</button>
+                <button class="el_header_button catalog_button">КАТАЛОГ ИГР</button>
             </a>
             <input class="el_header_input" type="text" placeholder="Введите название игры">
             <a href="vendor/authorization_form.php" class="el_a">

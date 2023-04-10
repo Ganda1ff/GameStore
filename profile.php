@@ -31,6 +31,8 @@ if (!$_SESSION['user']) {
         <a href="vendor/logout.php" class="logout  user_info buttons">ВЫХОД</a>
         <br>
         <a href="/index.php" class="buttons">НА ГЛАВНУЮ</a>
+        <br>
+        <a href="vendor/settings.php">Settings</a>
 
     </form>
 </div>
