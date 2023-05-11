@@ -48,7 +48,7 @@ if ($_SESSION['user']) {
 
     <div class="mySlides fade">
         <div class="appear">
-            <h1 class="el_h1_appear">ПОГРУЗИТЕСЬ В АТМОСФЕРУ США КОНЦА 19 ВЕКА В ИГРЕ, ГДЕ ДАЖЕ САМАЯ НЕЗНАЧИТЕЛЬНАЯ ДЕТАЛЬ ПРОРАБОТАНА ДО МЕЛОЧЕЙ. НОВЫЙ ШЕДЕВР ОТ ROCKSTAR</h1>
+            <h1 class="el_h1_appear">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui amet eaque odio fuga quos. Recusandae nesciunt earum reiciendis iusto! Est dolore iusto consequuntur, esse minima possimus aspernatur dolor suscipit? Nisi.</h1>
             <a href="#"><button class="el_button_appear">В КОРЗИНУ</button></a>
         </div>
         <div class="price">
