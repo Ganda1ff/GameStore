@@ -309,19 +309,19 @@ if (isset($_POST['submit'])) {
     $name = $_SESSION['user']['name'];
     $comment = $_POST['comment'];
 
-    // Check if user already submitted a comment
+    
     $query = "SELECT * FROM comments WHERE name='$name'";
     $result = $db->query($query);
     if ($result->num_rows > 0) {
         echo "<strong class='comment_strong_red_alert' color='red'>ВЫ УЖЕ ОСТАВИЛИ ОТЗЫВ</strong>";
     } else {
-        // Insert new comment into database
+        
         $query = "INSERT INTO comments (name, comment) VALUES ('$name', '$comment')";
         $db->query($query);
     }
 }
 
-// Select all comments from database and display them
+
 $query = "SELECT * FROM comments";
 $result = $db->query($query);
 
